@@ -6,6 +6,10 @@ RUN set -x ; \
 	DEBIAN_FRONTEND=noninteractive dpkg-reconfigure locales && \
 	apt-get update && \
 	DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+		dialog \
+                apt-utils \
+		libterm-ui-perl && \
+	DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
 		apache2 \
 		apache2-data \
 		apache2-utils \

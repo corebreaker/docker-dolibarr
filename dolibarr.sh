@@ -5,6 +5,9 @@ case $1 in
 build)
     docker build -t corebreaker/docker-dolibarr:latest . ;;
 
+pull)
+    docker pull corebreaker/docker-dolibarr ;;
+
 create)
     docker volume create --name dolibarr-socket
     docker volume create --name dolibarr-db
