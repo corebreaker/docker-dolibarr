@@ -67,7 +67,7 @@ RUN set -x ; \
     ) >/dolibarr-frontend.sh && \
     chmod +x /dolibarr-frontend.sh
 
-EXPOSE 3306 80
+EXPOSE 80
 
 ENTRYPOINT ["/dolibarr-frontend.sh"] 
 
