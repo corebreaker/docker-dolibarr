@@ -2,21 +2,21 @@ FROM ubuntu:xenial
 MAINTAINER Frédéric Meyer <frederic.meyer.77@gmail.com>
 
 RUN set -x ; \
-	locale-gen fr_FR.UTF-8 fr_FR@euro && \
-	DEBIAN_FRONTEND=noninteractive dpkg-reconfigure locales && \
-	apt-get update && \
-	DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-		dialog \
-                apt-utils \
-		libterm-ui-perl && \
-	DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-		apache2 \
-		apache2-data \
-		apache2-utils \
-		dolibarr \
-		mysql-common \
-		mysql-server \
-		dbconfig-mysql && \
+    locale-gen fr_FR.UTF-8 fr_FR@euro && \
+    DEBIAN_FRONTEND=noninteractive dpkg-reconfigure locales && \
+    apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        dialog \
+        apt-utils \
+        libterm-ui-perl && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        apache2 \
+        apache2-data \
+        apache2-utils \
+        dolibarr \
+        mysql-common \
+        mysql-server \
+        dbconfig-mysql && \
     cat /usr/share/dolibarr/htdocs/install/mysql/tables/llx_product.sql |sed 's/^  virtual\([ \t]\)/  `virtual`\1/' >/.llx_product.sql && \
     mv /.llx_product.sql /usr/share/dolibarr/htdocs/install/mysql/tables/llx_product.sql && \
     service mysql start && \
