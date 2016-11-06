@@ -3,3 +3,4 @@ stylesheets/* linguist-vendored linguist-documentation=false
 *.html linguist-vendored linguist-documentation=false
 *.css linguist-vendored linguist-documentation=false
 *.sh linguist-vendored linguist-documentation=false
+Dockerfile linguist-language=Dockerfile
